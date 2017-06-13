@@ -1,5 +1,7 @@
 package queue;
 
+import java.util.Arrays;
+
 public class ArrayQueue<E> implements Queue<E> {
 
 	private E[] array;
@@ -7,7 +9,7 @@ public class ArrayQueue<E> implements Queue<E> {
 	private int head = 0;
 
 	private int tail = 0;
-	
+
 	private int size = 0;
 
 	public ArrayQueue() {
@@ -20,17 +22,39 @@ public class ArrayQueue<E> implements Queue<E> {
 
 	@Override
 	public void enqueue(E e) {
-		array[tail++] = e;
+		if(isFull()){
+			tail = array.length;
+			System.out.println("Redimensionando...");
+			E[] temp = (E[]) new Object[array.length * 2];
+			System.arraycopy(array, 0, temp, 0, array.length);
+			array = temp;
+		}
+		if(tail == array.length){
+			tail = 0;
+		}
+		array[tail] = e;
+		tail++;
 		size++;
+		//tail = tail % array.length //Esse método é o mesmo do IF(tail == array.length)
+		System.out.println(Arrays.toString(array));
 	}
 
 	@Override
 	public E dequeue() {
-		E aux = array[head];
-		array[head] = null;
-		head++;
-		size--;
-		return aux;
+		if (isEmpty()) {
+			return null;
+		} else {
+			E aux = array[head];
+			array[head] = null;
+			head++;
+			if(head == array.length){
+				head = 0;
+			}
+			size--;
+			System.out.println(Arrays.toString(array));
+			return aux;			
+		}
+
 	}
 
 	@Override
@@ -46,6 +70,10 @@ public class ArrayQueue<E> implements Queue<E> {
 	@Override
 	public int getSize() {
 		return size;
+	}
+	
+	private boolean isFull(){
+		return getSize() == array.length;
 	}
 
 }
