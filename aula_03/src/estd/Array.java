@@ -11,9 +11,16 @@ public class Array {
 		
 		
 		String resultado = "";
+		int j = 0;
+		String[] x = null;
 		resultado = resultado + x[j];
 		
 		return resultado;
+	}
+
+	public void sum() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
