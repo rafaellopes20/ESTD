@@ -39,32 +39,32 @@ public class ArrayQueueTest {
 	
 	@Test
 	public void circularTest() {
-		ArrayQueue<Integer> queue = new ArrayQueue<>(7);
+		ArrayQueue<String> queue = new ArrayQueue<>(4);
 
 		Assert.assertTrue(queue.isEmpty());
 
-		queue.enqueue(0);
-		queue.enqueue(1);
-		queue.enqueue(2);
-		queue.enqueue(3);
-		queue.enqueue(4);
-		queue.enqueue(5);
-		queue.enqueue(6);
+		queue.enqueue("A");
+		queue.enqueue("B");
+		queue.enqueue("C");
+		queue.enqueue("D");
+		queue.dequeue();
+		queue.enqueue("E");
 		
-		queue.dequeue();
-		queue.dequeue();
-		queue.dequeue();
-		queue.dequeue();
+		Assert.assertTrue(queue.front() == "B");
 		
-		queue.enqueue(7);
-		queue.enqueue(8);
-		queue.enqueue(9);
-		queue.enqueue(10);
+		queue.enqueue("F");
 		
-		queue.dequeue();
-		queue.dequeue();
-		queue.dequeue();
-		queue.dequeue();
+		Assert.assertFalse(queue.isEmpty());
+		Assert.assertTrue(queue.getSize() == 5);
+		
+		Assert.assertEquals("B", queue.dequeue());
+		Assert.assertEquals("C", queue.dequeue());
+		Assert.assertEquals("D", queue.dequeue());
+		Assert.assertEquals("E", queue.dequeue());
+		Assert.assertEquals("F", queue.dequeue());
+
+		Assert.assertTrue(queue.isEmpty());
+		Assert.assertTrue(queue.getSize() == 0);
 	}
 
 }
