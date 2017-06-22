@@ -33,7 +33,7 @@ public class ArrayQueue<E> implements Queue<E> {
 			tail = array.length;
 			array = temp;
 		}
-		if(tail == array.length){ //Esse método é o mesmo do tail = tail % array.length
+		if(tail == array.length){ //Esse método é o mesmo do - tail = tail % array.length
 			tail = 0; 
 		}
 		array[tail] = e;
