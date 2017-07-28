@@ -1,10 +1,26 @@
 package matrix;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Pikachu {
 
-	public static void main(String[] args) {
-		char[][] matrix = { { 'a', 'b', 'c' }, { 'd', 'e', 'f' } };
-
+	public static void main(String[] args) throws Exception {
+//		char[][] matrix = { { 'a', 'b', 'c' }, { 'd', 'e', 'f' } };
+		int i = 0;
+		char[][] matrix = new char[40][80];
+		File file = new File("C:/Área de Trabalho/p.txt");
+		Scanner scanner = new Scanner(file);
+		
+		while(scanner.hasNext()){
+			char[] chars = scanner.nextLine().toCharArray();
+			for (int j = 0; j < chars.length; j++) {
+				matrix[i][j] = chars[j];
+			}
+			i++;
+		}
+		
 		print(matrix); // imprime normal
 		flip(matrix); // inverte
 		print(matrix); // imprimi invertido
