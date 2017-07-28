@@ -14,7 +14,7 @@ public class Matrix {
 			for (int column = 0; column < columnCount; column++) {
 				System.out.print( " | "+matrix[line][column]);
 			}
-			System.out.println( " |");
+			System.out.println(" |");
 		}
 	}
 }
