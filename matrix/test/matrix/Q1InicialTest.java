@@ -4,11 +4,11 @@ import org.junit.Assert;
 import org.junit.Test;
 
 //Dada uma matriz de decimais (double), retorne outra matriz multiplicando cada item por 2
-public class Q1Test {
+public class Q1InicialTest {
 
 	@Test
-	public void q1(){
-		Q1 q1 = new Q1();
+	public void q1Inicial(){
+		Q1Inicial q1 = new Q1Inicial();
 		
 		double[][] matriz = { { 1.0, 2.0, 3.0 }, { 4.0, 5.0, 6.0 } };
 		double[][] matrizExpected = { { 2.0, 4.0, 6.0 }, { 8.0, 10.0, 12.0 } };

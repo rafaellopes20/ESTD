@@ -10,7 +10,7 @@ public class Pikachu {
 //		char[][] matrix = { { 'a', 'b', 'c' }, { 'd', 'e', 'f' } };
 		int i = 0;
 		char[][] matrix = new char[40][80];
-		File file = new File("C:/Área de Trabalho/p.txt");
+		File file = new File("C:/Users/rafae/Documents/Faculdade/3º Ano/Estrutura de Dados (ESTD)/p.txt");
 		Scanner scanner = new Scanner(file);
 		
 		while(scanner.hasNext()){

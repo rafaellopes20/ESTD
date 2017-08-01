@@ -2,7 +2,7 @@ package matrix;
 
 //Dada uma matriz de decimais (double), retorne outra matriz multiplicando cada item por 2
 
-public class Q1 {
+public class Q1Inicial {
 
 	public double[][] q1(double matrix[][]){
 		double[][] matriz = matrix.clone();
